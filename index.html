@@ -28,12 +28,40 @@
     .token-btn:hover {
       background-color: #ffc14c;
     }
+    .logo {
+      width: 200px;
+      margin-bottom: 30px;
+    }
+    .whitepaper {
+      margin-top: 40px;
+    }
+    .whitepaper img {
+      width: 300px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px #ffa500;
+    }
+    a.download-link {
+      display: block;
+      margin-top: 10px;
+      font-size: 18px;
+      color: #ffa500;
+      text-decoration: none;
+    }
   </style>
 </head>
 <body>
+
+  <img src="logo.png" alt="FoxCoin Logo" class="logo" />
+
   <h1>Welcome to FoxCoin 🦊</h1>
   <p>ERC-20 Token on Ethereum<br/>Symbol: <strong>FOX</strong><br/>Supply: 1,000,000,000</p>
   <button class="token-btn" onclick="addFoxCoin()">Add FOX to MetaMask</button>
+
+  <div class="whitepaper">
+    <h2>📄 FoxCoin Whitepaper</h2>
+    <img src="foxcoin_whitepaper_cover.png" alt="FoxCoin Whitepaper Cover" />
+    <a class="download-link" href="foxcoin_whitepaper_cover.png" download>Download Whitepaper</a>
+  </div>
 
   <script>
     async function addFoxCoin() {
@@ -62,5 +90,6 @@
       }
     }
   </script>
+
 </body>
 </html>
