@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FoxCoin (FOX) - Official Site</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #0f0f0f;
+      color: #f1f1f1;
+      text-align: center;
+      padding: 50px;
+    }
+    h1 {
+      color: #ffa500;
+    }
+    .token-btn {
+      padding: 12px 20px;
+      background-color: #ffa500;
+      border: none;
+      border-radius: 5px;
+      color: #000;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+    .token-btn:hover {
+      background-color: #ffc14c;
+    }
+  </style>
+</head>
+<body>
+  <h1>Welcome to FoxCoin 🦊</h1>
+  <p>ERC-20 Token on Ethereum<br/>Symbol: <strong>FOX</strong><br/>Supply: 1,000,000,000</p>
+  <button class="token-btn" onclick="addFoxCoin()">Add FOX to MetaMask</button>
+
+  <script>
+    async function addFoxCoin() {
+      try {
+        const wasAdded = await window.ethereum.request({
+          method: 'wallet_watchAsset',
+          params: {
+            type: 'ERC20',
+            options: {
+              address: '0xd9145CCE52D386f254917e481eB44e9943F39138',
+              symbol: 'FOX',
+              decimals: 18,
+              image: 'https://foxcoin.live/logo.png'
+            }
+          }
+        });
+
+        if (wasAdded) {
+          alert('FOX was added to MetaMask!');
+        } else {
+          alert('FOX was not added.');
+        }
+      } catch (error) {
+        console.error(error);
+        alert('You need MetaMask installed.');
+      }
+    }
+  </script>
+</body>
+</html>
